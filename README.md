@@ -1,1 +1,1 @@
-# nrl-hybrids-ground-station
+# nrl-hybrids-gs
