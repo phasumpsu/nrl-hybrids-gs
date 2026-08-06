@@ -1,0 +1,35 @@
+VERSION 1
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_REL_
+	BA_DEF_SGTYPE_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ECU GroundStation  // Define Nodes
+
+// Message Definition: ID 0x100, Name 'EngineData', Length 8 bytes, Transmitter 'ECU'
+BO_ 256 EngineData: 8 ECU
+ SG_ RPM : 0|16@1+ (0.25,0) [0|16000] "rpm" GroundStation
+ SG_ Temperature : 16|8@1+ (1,-40) [-40|215] "C" GroundStation
+ SG_ Status : 24|8@1+ (1,0) [0|255] "" GroundStation
+
+// Message Definition: ID 0x200, Name 'ControlCmd', Length 8 bytes, Transmitter 'GroundStation'
+BO_ 512 ControlCmd: 8 GroundStation
+ SG_ Activate : 0|1@1+ (1,0) [0|1] "" ECU
+ SG_ Reserved : 1|7@1+ (1,0) [0|127] "" ECU

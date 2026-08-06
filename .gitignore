@@ -1,0 +1,17 @@
+#Virtual Environment
+.venv/
+venv/
+env/
+
+#Simulation
+sim_engine
+*.exe
+
+#Pyton Bytecode
+__pycache__/
+*.py[cod]
+
+#VS Code Settings
+.vscode/*.json
+!.vscode/c_cpp_properties.json
+!.vscode/tasks.json
